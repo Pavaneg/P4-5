@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articulo{% endblock %}
+
+{% block body %}
+<div class="container card">
+    <div class="d-flex flex-row justify-content-around align-items-baseline">
+        <h1 class="m-3">{{ articulo.titulo }}</h1>
+        <p>{{ articulo.fecha ? articulo.fecha|date('d-m-Y') : '' }}</p>    
+    </div>
+
+    <p class="m-2">Resumen : {{ articulo.resumen }}</p>
+
+    <div class="d-flex flex-row justify-content-between m-2">
+    <p>Categoria : {{ articulo.categoria }} </p>
+    <p>Medio : {{ articulo.medio }} </p>
+    <p>Comentario : {{ articulo.comentario }} </p>
+    
+    </div>
+
+    <p class=" card m-2 p-3">
+        {{ articulo.texto }}
+    </p>
+
+    <div class="d-flex flex-row justify-content-around">
+        <a href="{{ articulo.url }}">{{ articulo.url }}</a>
+        <div class="d-flex flex-row">
+        <a class="btn bg-success text-light my-1"href="{{ path('articulo_edit', {'id': articulo.id}) }}">Modificar</a>
+        {{ include('articulo/_delete_form.html.twig') }}       
+        </div>
+    </div>
+</div>
+{% endblock %}

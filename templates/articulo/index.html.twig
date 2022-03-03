@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articulo index{% endblock %}
+
+{% block body %}
+
+    <div class=" list-group float-start d-flex flex-column m-3">
+        <a href="{{ path('categoria', {cat: 'Opinión'}) }}" class="list-group-item list-group-item-action">Opinión</a>
+        <a href="{{ path('categoria', {cat: 'Reportaje'}) }}" class="list-group-item list-group-item-action">Reportaje</a>
+        <a href="{{ path('categoria', {cat: 'Divulgación'}) }}" class="list-group-item list-group-item-action">Divulgación</a>
+        <a href="{{ path('categoria', {cat: 'Informativo'}) }}" class="list-group-item list-group-item-action">Informativo</a>
+        <a href="{{ path('categoria', {cat: 'Editorial'}) }}" class="list-group-item list-group-item-action">Editorial</a>
+        <a href="{{ path('categoria', {cat: 'Columna'}) }}" class="list-group-item list-group-item-action">Columna</a>
+</div>
+    <div class="d-flex flex-column m-2">
+        <p class="h5 text-center">Categoria / Todos</p>
+        <div class="d-flex flex-column">
+            {% for articulo in articulos %}
+                <div class="card m-1">
+                    <div class="d-flex flex-row justify-content-around">
+                        <p class="h6">{{ articulo.titulo }}</p>
+                        <p>{{ articulo.fecha ? articulo.fecha|date('d-m-Y') : '' }}</p>
+                    </div>
+                        <p class="mx-3">Resumen : {{ articulo.resumen }}</p>
+                        <a class="btn btn-sm bg-success text-light" role="button" aria-pressed="true" href="{{ path('articulo_show', {'id': articulo.id}) }}">Mostrar</a>
+                </div>
+                    {% else %}
+                        <tr>
+                            <td colspan="10">no records found</td>
+                        </tr>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

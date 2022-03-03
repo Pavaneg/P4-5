@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block title %}New Articulo{% endblock %}
+
+{% block body %}
+<div class="card container my-5 p-1">
+    <h1 class="text-center">Crear nuevo articulo</h1>
+
+    {{ include('articulo/_form.html.twig') }}
+</div>
+{% endblock %}

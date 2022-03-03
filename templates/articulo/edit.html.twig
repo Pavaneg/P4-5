@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block title %}Edit Articulo{% endblock %}
+
+{% block body %}
+    <div class="card container my-5 p-1">
+        <h1 class="text-center">Modificar articulo</h1>
+        {{ include('articulo/_form.html.twig', {'button_label': 'Actualizar'}) }}
+        {{ include('articulo/_delete_form.html.twig') }}
+    </div>
+{% endblock %}
