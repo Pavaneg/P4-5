@@ -37,6 +37,6 @@ Después tendremos un apartado para ver/modificar/eliminar el articulo
 
 **Creado por Pablo Varela**
 
-#Proyecto con licencia MIT
+# Proyecto con licencia MIT
 
 ### Si alguien quiere modificar el proyecto puede crear una variante del mismo o ramas independientes
